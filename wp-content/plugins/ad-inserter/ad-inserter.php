@@ -2,7 +2,7 @@
 
 /*
 Plugin Name: Ad Inserter
-Version: 2.6.19
+Version: 2.6.20
 Description: Ad management with many advanced advertising features to insert ads at optimal positions
 Author: Igor Funa
 Author URI: http://igorfuna.com/
@@ -16,6 +16,10 @@ Requires PHP: 5.6
 /*
 
 Change Log
+
+Ad Inserter 2.6.20 - 2021-01-06
+- Added support for alt text and lazy loading for banner code generator
+- Few minor bug fixes, cosmetic changes and code improvements
 
 Ad Inserter 2.6.19 - 2020-12-16
 - Improved code to reduce layout shift when using client-side device detection
@@ -865,6 +869,7 @@ function remove_debug_parameters_from_url ($url = false) {
         AI_URL_DEBUG_PROCESSING_FE,
         AI_URL_DEBUG_PHP,
         AI_URL_DEBUG_BLOCKS,
+        AI_URL_DEBUG_CODE,
         AI_URL_DEBUG_USER,
         AI_URL_DEBUG_TAGS,
         AI_URL_DEBUG_POSITIONS,

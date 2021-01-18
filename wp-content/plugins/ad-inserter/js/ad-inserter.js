@@ -1,4 +1,4 @@
-var javascript_version = "2.6.19";
+var javascript_version = "2.6.20";
 var ignore_key = true;
 var start = 1;
 var end = 16;
@@ -3308,8 +3308,11 @@ jQuery(document).ready (function($) {
             switch (code_type) {
               case AI_CODE_BANNER:
                 $("#banner-image-url-" + block).val (code_data ['image']).trigger ('input');
+                $("#image-alt-text-" + block).val (code_data ['alt']);
+                $("#lazy-load-image-" + block).prop ('checked', code_data ['loading'] == 'lazy');
+
                 $("#banner-url-" + block).val (code_data ['link']).trigger ('input');
-                $("#open-new-tab-" + block).attr('checked', code_data ['target'] == '_blank');
+                $("#open-new-tab-" + block).prop ('checked', code_data ['target'] == '_blank');
                 break;
               case AI_CODE_ADSENSE:
                 $("#adsense-comment-" + block).val (code_data ['adsense-comment']);
@@ -3386,10 +3389,13 @@ jQuery(document).ready (function($) {
       switch (code_type) {
         case AI_CODE_BANNER:
           code_data ['image'] = $("#banner-image-url-" + block).val ();
-          code_data ['link']  = $("#banner-url-" + block).val ();
+          code_data ['alt'] = $("#image-alt-text-" + block).val ();
+          if ($("#lazy-load-image-" + block).is(":checked"))
+            code_data ['loading'] = 'lazy';
 
+          code_data ['link']  = $("#banner-url-" + block).val ();
           if ($("#open-new-tab-" + block).is(":checked"))
-          code_data ['target']  = '_blank';
+            code_data ['target'] = '_blank';
           break;
         case AI_CODE_ADSENSE:
           code_data ['block']                 = block;

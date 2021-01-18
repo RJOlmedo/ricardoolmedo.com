@@ -8483,7 +8483,14 @@ class ai_code_generator {
       case AI_CODE_BANNER:
         $code = '';
         if (isset ($data ['image']) && $data ['image'] != '') {
-          $code = '<img src="' . $data ['image'] . '">';
+          $attributes = '';
+          if (isset ($data ['loading']) && $data ['loading'] != '') {
+            $attributes .= ' loading="'.$data ['loading'].'"';
+          }
+          if (isset ($data ['alt']) && $data ['alt'] != '') {
+            $attributes .= ' alt="'.$data ['alt'].'"';
+          }
+          $code = '<img src="' . $data ['image'] . '"'.$attributes.'>';
         }
         if (isset ($data ['link']) && $data ['link'] != '') {
           $code = '<a href="' . $data ['link'] . '"' .(isset ($data ['target']) ? ' target="' . $data ['target'] . '"' : '') . '>' . $code . '</a>';
@@ -9142,6 +9149,8 @@ class ai_code_generator {
       if ($images->length != 0) {
 //        $data ['image']   = $images [0]->getAttribute ('src');
         $data ['image']   = $images->item (0)->getAttribute ('src');
+        $data ['alt']     = $images->item (0)->getAttribute ('alt');
+        $data ['loading'] = $images->item (0)->getAttribute ('loading');
       }
 
       if ($links->length != 0) {

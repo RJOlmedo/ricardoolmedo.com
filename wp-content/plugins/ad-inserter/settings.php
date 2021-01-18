@@ -909,15 +909,29 @@ function generate_settings_form (){
           <td style="padding-right: 7px;">
             <?php _e ('Image', 'ad-inserter'); ?>
           </td>
-          <td style="width: 98%;">
+          <td style="width: 98%;" colspan="2">
             <input id="banner-image-url-<?php echo $block; ?>" style="width: 100%;" type="text" size="50" maxlength="200" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <?php _e ('Alt text', 'ad-inserter'); ?>
+          </td>
+          <td style="width: 50%;">
+            <input id="image-alt-text-<?php echo $block; ?>" style="width: 100%;" type="text" size="50" maxlength="200" />
+          </td>
+          <td style="text-align: right;">
+            <span style="margin-left: 20px;">
+              <input type="checkbox" id="lazy-load-image-<?php echo $block; ?>" />
+              <label for="lazy-load-image-<?php echo $block; ?>" style="display: inline-block; margin-top: -1px;"><?php _e ('Lazy loading', 'ad-inserter'); ?></label>
+            </span>
           </td>
         </tr>
         <tr>
           <td>
             <?php _e ('Link', 'ad-inserter'); ?>
           </td>
-          <td>
+          <td colspan="2">
             <input id="banner-url-<?php echo $block; ?>" style="width: 100%;" type="text" size="50" maxlength="200" />
           </td>
         </tr>
@@ -926,7 +940,9 @@ function generate_settings_form (){
             <input type="checkbox" id="open-new-tab-<?php echo $block; ?>" />
           </td>
           <td>
-            <label for="open-new-tab-<?php echo $block; ?>" style="display: inline-block; margin-top: 8px;"><?php _e ('Open link in a new tab', 'ad-inserter'); ?></label>
+            <label for="open-new-tab-<?php echo $block; ?>" style="display: inline-block; margin-top: 6px;"><?php _e ('Open link in a new tab', 'ad-inserter'); ?></label>
+          </td>
+          <td>
             <button id="select-image-button-<?php echo $block; ?>" type="button" class='ai-button select-image' style="display: none; min-width: 120px; float: right; margin: 7px 0 0 0;"><?php _e ('Select Image', 'ad-inserter'); ?></button>
             <button id="select-placeholder-button-<?php echo $block; ?>" type="button" class='ai-button select-image' style="display: none; min-width: 120px; float: right; margin: 7px 10px 0 0;"><?php _e ('Select Placeholder', 'ad-inserter'); ?></button>
           </td>

@@ -31,7 +31,7 @@ if (!defined( 'AD_INSERTER_NAME'))
   define ('AD_INSERTER_NAME', 'Ad Inserter');
 
 if (!defined( 'AD_INSERTER_VERSION'))
-  define ('AD_INSERTER_VERSION', '2.6.19');
+  define ('AD_INSERTER_VERSION', '2.6.20');
 
 if (!defined ('AD_INSERTER_PLUGIN_BASENAME'))
   define ('AD_INSERTER_PLUGIN_BASENAME', plugin_basename (__FILE__));
@@ -1177,6 +1177,7 @@ define ('AI_URL_DEBUG_PROCESSING',           'ai-debug-processing');    // AI_UR
 define ('AI_URL_DEBUG_PROCESSING_FE',        'ai-debug-processing-fe'); // AI_URL_DEBUG_PROCESSING_FE_
 define ('AI_URL_DEBUG_PHP',                  'ai-debug-php');           // AI_URL_DEBUG_PHP
 define ('AI_URL_DEBUG_BLOCKS',               'ai-debug-blocks');
+define ('AI_URL_DEBUG_CODE',                 'ai-debug-code');
 define ('AI_URL_DEBUG_USER',                 'ai-debug-user');
 define ('AI_URL_DEBUG_TAGS',                 'ai-debug-tags');
 define ('AI_URL_DEBUG_POSITIONS',            'ai-debug-positions');

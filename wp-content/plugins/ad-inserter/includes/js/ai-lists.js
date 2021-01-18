@@ -794,7 +794,11 @@ jQuery (function ($) {
       }, 50);
 
       if (typeof ai_load_blocks == 'function') {
+        // https://adinserter.pro/faq/gdpr-compliance-cookies-consent#manual-loading
         jQuery(document).on ("cmplzEnableScripts", ai_cmplzEnableScripts);
+
+        // Complianz Privacy Suite
+        jQuery(document).on ("cmplz_event_marketing", ai_cmplzEnableScripts);
 
         function ai_cmplzEnableScripts (consentData) {
           if (consentData.consentLevel === 'all'){
